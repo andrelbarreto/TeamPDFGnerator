@@ -40,9 +40,9 @@ function initiate() {
     inquirer.prompt([
       {
         type: "list",
-        name: "role",
+        name: "_role",
         message: "Select this team member's role:",
-        choices: ["manager", "engineer", "intern"]
+        choices: ["Manager", "Engineer", "Intern"]
       },
       {
         type: "input",
@@ -63,19 +63,19 @@ function initiate() {
         type: "input",
         name: "username",
         message: "Enter GitHub username:",
-        when: (data) => data.type === 'engineer',
+        when: (data) => data._role === 'Engineer',
       },
       {
         type: "input",
         name: "school",
         message: "Enter name of school:",
-        when: (data) => data.type === 'intern',
+        when: (data) => data._role === 'Intern',
       },
       {
         type: "input",
         name: "officenumber",
         message: "Enter office number:",
-        when: (data) => data.type === 'manager',
+        when: (data) => data._role === 'Manager',
       },
       {
         type: "confirm",
@@ -90,7 +90,7 @@ function initiate() {
           // console.log(data);
           // console.log(data.type);
 
-          if (data.role === 'manager') {
+          if (data._role === 'Manager') {
 
             //creates a new manager using manager class
             const newManager = new manager(data.name, data.id, data.email, data.officenumber);
@@ -109,7 +109,7 @@ function initiate() {
 
               //return the HTML with the placeholders replaced by newManager data
               arrayHTML = arrayHTML.map(arrayHTML => {
-                return arrayHTML.replace(/{{ id }}/g, newManager["id"]).replace(/{{ email }}/g, newManager["email"]).replace(/{{ officenumber }}/g, newManager["officeNumber"]).replace(/{{ name }}/g, newManager["name"]).replace(/{{ type }}/g, newManager.getRole());
+                return arrayHTML.replace(/{{ id }}/g, newManager["id"]).replace(/{{ email }}/g, newManager["email"]).replace(/{{ officenumber }}/g, newManager["officeNumber"]).replace(/{{ name }}/g, newManager["name"]).replace(/{{ _role }}/g, newManager.getRole());
                 
               });
 
@@ -122,7 +122,7 @@ function initiate() {
           // end if statement
           }
 
-          if (data.role === 'intern') {
+          if (data._role === 'Intern') {
             
             //creates new intern entry using intern class
             const newIntern = new intern(data.name, data.id, data.email, data.school);
@@ -140,7 +140,7 @@ function initiate() {
 
               //return the HTML with the placeholders replaced by newIntern data
               arrayHTML = arrayHTML.map(arrayHTML => {
-                return arrayHTML.replace(/{{ id }}/g, newIntern["id"]).replace(/{{ email }}/g, newIntern["email"]).replace(/{{ school }}/g, newIntern["school"]).replace(/{{ name }}/g, newIntern["name"]).replace(/{{ type }}/g, newIntern.getRole());
+                return arrayHTML.replace(/{{ id }}/g, newIntern["id"]).replace(/{{ email }}/g, newIntern["email"]).replace(/{{ school }}/g, newIntern["school"]).replace(/{{ name }}/g, newIntern["name"]).replace(/{{ _role }}/g, newIntern.getRole());
                 
               });
 
@@ -153,7 +153,7 @@ function initiate() {
           // end if statement
           }
 
-          if (data.role === 'engineer') {
+          if (data._role === 'Engineer') {
            
             //creates a new engineer using engineer class
             const newEngineer = new engineer(data.name, data.id, data.email, data.username);
@@ -175,7 +175,7 @@ function initiate() {
 
               //return the HTML with the placeholders replaced by newEngineer data
               arrayHTML = arrayHTML.map(arrayHTML => {
-                return arrayHTML.replace(/{{ id }}/g, newEngineer["id"]).replace(/{{ email }}/g, newEngineer["email"]).replace(/{{ username }}/g, newEngineer["github"]).replace(/{{ name }}/g, newEngineer["name"]).replace(/{{ type }}/g, newEngineer.getRole());
+                return arrayHTML.replace(/{{ id }}/g, newEngineer["id"]).replace(/{{ email }}/g, newEngineer["email"]).replace(/{{ username }}/g, newEngineer["github"]).replace(/{{ name }}/g, newEngineer["name"]).replace(/{{ _role }}/g, newEngineer.getRole());
                 
               });
 
