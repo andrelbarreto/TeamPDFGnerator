@@ -1,5 +1,5 @@
 {
-  "name": "PDF-Team-Creator",
+  "name": "TeamPdfCreatorn",
   "version": "1.0.0",
   "description": "OOP and testing for PDF Team Creator / hw10",
   "main": "app.js",
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/andrelbarreto/CreateTeamPDF.git"
+    "url": "git+https://github.com/andrelbarreto/TeamPdfCreator.git"
   },
   "author": "Andre Barreto",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/andrelbarreto/CreateTeamPDF/issues"
+    "url": "https://github.com/andrelbarreto/TeamPdfCreator/issues"
   },
-  "homepage": "https://github.com/andrelbarreto/CreateTeamPDF#readme",
+  "homepage": "https://github.com/andrelbarreto/TeamPdfCreator#readme",
   "dependencies": {
     "express": "^4.17.1",
     "inquirer": "^6.5.2"
