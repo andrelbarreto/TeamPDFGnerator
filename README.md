@@ -1,8 +1,8 @@
 # Andre Barreto Team PDF Creator 1.0
 This is a Git Hub repository for the NU Coding Bootcamp Team Site Generator Homework for Week 10.
 
-![profile pdf screenshot](/assets/images/background_bio.jpg)
-![node js run gif](/assets/images/10-OOP-homework-demo-1.png)
+![profile pdf screenshot](/Assets/images/background_bio.jpg)
+![node js run gif](/Assets/images/10-OOP-homework-demo-1.png)
 
 # Setup
 
